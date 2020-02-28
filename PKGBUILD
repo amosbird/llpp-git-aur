@@ -8,7 +8,7 @@
 # Contributor: hero <erdetb at web dot de>
 # Maintainer: aksr <aksr at t-com dot me>
 pkgname=llpp-git
-pkgver=30.r64.g86a1984
+pkgver=99999.30.r64.g86a1984
 pkgrel=1
 pkgdesc='A graphical PDF viewer which aims to superficially resemble less(1).'
 arch=('i686' 'x86_64')
@@ -51,7 +51,7 @@ options=('!strip')
 
 pkgver() {
   cd "$srcdir/$pkgname"
-  git describe --tags | sed 's/^v//;s/-/.r/;s/-/./'
+  echo 99999.$(git describe --tags | sed 's/^v//;s/-/.r/;s/-/./')
 }
 
 prepare() {
